@@ -34,7 +34,24 @@ what the serverless function expects.
 
 Save this Field
 
-### 3. Start the server and ngrok
+### 3. Start the database
+
+Run docker-compose.yml in the repository.
+The database will start on PORT `5433`, the credentials are in `docker-compose.yml`.
+
+Create table:
+```bash
+CREATE TABLE ep-poc.orders (
+    order_id varchar(40) NOT NULL,
+    status_erp varchar(40) NULL,
+    status varchar(40) NULL,
+    payment varchar(40) NULL,
+    shipping varchar(40) NULL,
+    CONSTRAINT orders_pkey PRIMARY KEY (order_id)
+);
+```
+
+### 4. Start the server and ngrok
 
 Start the development server
 
@@ -47,22 +64,6 @@ ngrok http localhost:60000
 ```
 
 This will expose PORT `60000` to the outside world. Make a note of the `http` URL ngrok provides.
-
-### 4. Start database
-
-Run docker-compose.yml in the repository.
-
-Create table:
-```bash
-CREATE TABLE orders (
-    order_id varchar(40) NOT NULL,
-    status_erp varchar(40) NULL,
-    status varchar(40) NULL,
-    payment varchar(40) NULL,
-    shipping varchar(40) NULL,
-    CONSTRAINT orders_pkey PRIMARY KEY (order_id)
-);
-```
 
 ### 5. Create a new Moltin integration
 
