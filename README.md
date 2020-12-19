@@ -217,7 +217,7 @@ Youʼll receive a response similar to:
   "data": {
     "id": "e59437fb-1db0-476e-a8f2-89aba2c16b1b",
     "type": "order",
-    "status_erp": "1-Sent to Erp",
+    "status_erp": "1-SentToErp",
     "status": "incomplete",
     "payment": "unpaid",
     "shipping": "unfulfilled",
