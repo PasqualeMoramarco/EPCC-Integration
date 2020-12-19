@@ -37,7 +37,7 @@ public class OrderWebService {
         //TODO chiamata che invia l'ordine all'ERP
         /** Aggiorno lo stato dell'ordine su Elastic Path*/
         OrderDto orderDtoNew = new OrderDto();
-        DataDto dataDto = new DataDto(orderDto.getData().getId(), "1 - Sent to Erp");
+        DataDto dataDto = new DataDto(orderDto.getData().getId(), "1-Sent to Erp");
         orderDtoNew.setData(dataDto);
         orderService.updateOrder(orderDtoNew);
 
